@@ -2,38 +2,35 @@
 
 ## Today
 
-- [[40-summaries/daily/]]
+- `40-summaries/daily/`
 
 ## This Week
 
-- [[40-summaries/weekly/]]
+- `40-summaries/weekly/`
 
 ## Core Themes
 
-- [[Markets]]
-- [[Software Engineering]]
-- [[AI Engineering]]
-- [[Data Engineering]]
-- [[Data Science]]
-- [[MLOps]]
-- [[LLM]]
-- [[AI Research]]
+- [[markets|Markets]]
+- [[software-engineering|Software Engineering]]
+- [[ai-engineering|AI Engineering]]
+- [[data-engineering|Data Engineering]]
+- [[data-science|Data Science]]
+- [[mlops|MLOps]]
+- [[llm|LLM]]
+- [[ai-research|AI Research]]
 
 ## Important Topics
 
-- [[NASDAQ]]
-- [[S&P 500]]
-- [[SET50]]
-- [[AI Coding Agents]]
-- [[Claude Code]]
-- [[Codex]]
-- [[PostgreSQL]]
-- [[MLOps]]
-- [[Local LLM]]
+- [[nasdaq|NASDAQ]]
+- [[sp500|S&P 500]]
+- [[set50|SET50]]
+- [[ai-coding-agents|AI Coding Agents]] — incl. Claude Code, Codex
+- [[databases|Databases]] — incl. PostgreSQL
+- [[local-llm|Local LLM]]
 
 ## Inbox
 
-- [[00-inbox/]]
+- `00-inbox/`
 
 ## Registry
 

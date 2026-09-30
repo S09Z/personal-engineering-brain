@@ -238,19 +238,36 @@ News:
 
 `YYYY-MM-DD-short-description.md`
 
-Topics:
+Topics and Themes:
 
-`canonical-name.md`
+`<id>.md`, where `<id>` is the `id` from `NEWS_REGISTRY.md`
 
 Examples:
 
 - `2026-09-30-claude-code-agent-update.md`
 - `2026-09-30-postgresql-security-release.md`
-- `claude-code.md`
+- `ai-coding-agents.md`
 - `sp500.md`
 - `set50.md`
 
 Avoid multiple names for the same topic.
+
+Link Topics and Themes by id with a display alias:
+
+`[[ai-coding-agents|AI Coding Agents]]`
+
+---
+
+# Folder Usage
+
+- `00-inbox/` — raw captures (Web Clipper, pasted URLs) not yet processed
+- `10-news/<theme-id>/` — News notes, whatever their `status`
+- `20-topics/<topic-id>.md` — Topic notes
+- `30-themes/<theme-id>.md` — Theme notes
+- `40-summaries/{daily,weekly,monthly}/` — synthesis notes
+- `50-sources/` — TBD, unused until a need is defined
+- `90-archive/` — notes moved out of active use (`status: archived`)
+- `templates/` — note templates
 
 ---
 
@@ -271,12 +288,13 @@ sources: []
 ---
 ```
 
-Allowed importance values:
+Allowed importance values (lowercase forms of the labels in `NEWS_REGISTRY.md`):
 
 - action
 - important
 - interesting
-- low
+
+`IGNORE` items are discarded and never get a note.
 
 Allowed status values:
 
