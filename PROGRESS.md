@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase E, step E1 — validation script in `scripts/` (complete, 2026-10-01)
+Phase E, step E2 — release listing script (complete, 2026-10-01). Phase E is complete.
 
 ## Completed
 
@@ -87,6 +87,20 @@ Phase E, step E1 — validation script in `scripts/` (complete, 2026-10-01)
 - [x] Phase E1 (2026-10-01): one validation command
   - new `scripts/check_notes.py`: the two check scripts that had lived outside the repo (note check, `HOME.md` link check), rewritten as one; standard library only, read-only
   - `AGENTS.md`: new "Validation" section with the command and what it does and does not check
+- [x] Phase E2 (2026-10-01): decision on a fetch script
+  - decision: **yes, but only for release listing**, not a general feed fetcher
+  - new `scripts/list_releases.py`: prints stable releases since a date for the GitHub repositories in the "My Stack Release Checklist" of `SOURCES.md`; standard library only; writes nothing
+  - `SOURCES.md`: the one-line `gh` command is replaced by this script
+
+## Phase E2 Findings
+
+- **What was actually repetitive.** Listing recent releases of the stack tools was done by hand in every ingestion pass and every follow-up check so far. It is deterministic: same input, same answer. Searching for news, judging importance and writing summaries were not repetitive in that sense and stay manual.
+- **No second list.** The script reads its repositories from the checklist section of `SOURCES.md`; adding a tool there is enough.
+- **Scope kept narrow.** It does not read RSS feeds, blogs, the PostgreSQL news archive or market pages, and it creates no notes. It prints the pages it cannot cover so they are still checked by hand.
+- **Done before its trigger.** The roadmap trigger was about two weeks of manual use; the evidence is two days and three ingestion passes.
+- It calls the public GitHub API without a login (60 requests per hour; one per repository). `GITHUB_TOKEN` is used if set.
+- TypeScript and Codex tags are noisy (`vscode-typescript/...`, `rust-v...`); the script lists them as they are.
+- No tests and no CI for the script.
 
 ## Phase E1 Findings
 
@@ -206,7 +220,7 @@ Phases and sub-tasks agreed 2026-10-01:
 - Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
 - Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); D4 SET50 source (done); D5 paper template (done); D6 `.gitignore` (done))
-- Phase E — minimal automation: E1 validation script (done, ahead of its trigger); E2 feed-list fetch script still waits for about two weeks of manual use
+- Phase E — minimal automation: E1 validation script (done, ahead of its trigger); E2 release listing script (done, ahead of its trigger)
 
 ## Loop 02 Findings
 
