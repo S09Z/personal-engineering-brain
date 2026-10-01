@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase D, step D3 — Stale window defined (complete, 2026-10-01)
+Phase D, step D4 — SET50 source found (complete, 2026-10-01)
 
 ## Completed
 
@@ -73,6 +73,18 @@ Phase D, step D3 — Stale window defined (complete, 2026-10-01)
 - [x] Phase D3 (2026-10-01): "stale" given a time window
   - `INGESTION_RULES.md` §2: an item is stale when its `event_date` is more than 14 days before ingestion; three exceptions (still requires action on "My Stack", new information, lasting change not yet recorded); a stale `interesting` item is dropped
   - 14 days is a proposal: it covers a missed week with a week of slack
+- [x] Phase D4 (2026-10-01): SET50 source
+  - decision: **keep SET50** in the Daily Market Snapshot; the exchange publishes it
+  - `SOURCES.md`: new "Daily Market Snapshot Sources" section with the two set.or.th pages and how to read them
+  - the two daily briefs gained a dated SET50 line each (2026-09-29: 1,065.46, −0.86%; 2026-09-30: 1,038.66, −2.52%); the original "not found" lines are left in place
+
+## Phase D4 Findings
+
+- The official 5-days Market Summary page shows no numbers to a plain fetch; it has to be opened in a browser. The SET50 overview page works with a plain fetch.
+- Cross-checks passed: the page's SET Index closes and trading values for 09-29 and 09-30 equal the Kaohoon figures already in the briefs, and its SET50 close for 09-30 equals the previous close implied by the overview page.
+- SET50 fell more than the SET Index on both days (−0.86% vs −0.50%, −2.52% vs −2.21%), consistent with the reported big-cap selling.
+- This is the first time an existing daily brief was edited. The edits are additions with a date; nothing was rewritten. "Briefs are a record of the day; later additions are dated" is still not a written rule.
+- Investor-type flows (foreign net buy/sell) are on set.or.th too, also browser-only; not added to the snapshot.
 
 ## Phase D3 Findings
 
@@ -161,7 +173,7 @@ Phases and sub-tasks agreed 2026-10-01:
 - Phase A — Loop 04 (done)
 - Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
-- Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); still open: SET50 source, RESEARCH template, `.gitignore`)
+- Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); D4 SET50 source (done); still open: RESEARCH template, `.gitignore`)
 - Phase E — minimal automation, only after about two weeks of manual use
 
 ## Loop 02 Findings
@@ -193,7 +205,7 @@ Retention / importance:
 - The ACTION rule ("update Topic note") conflicts with "human controls promotion". Topic updates were deferred. (resolved: after review)
 
 Sources:
-- SET50 close is not available from the sources found; only the SET Index is.
+- SET50 close is not available from the sources found; only the SET Index is. (resolved in Phase D4)
 - WebFetch got HTTP 403 from openai.com, cnbc.com and axios.com, so the DevDay note relies on independent reporting.
 - status.claude.com history was not retrievable, so the outage relies on secondary reporting.
 
