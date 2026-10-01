@@ -59,3 +59,11 @@ Temporary Items
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
 .vscode/
+
+# Secrets: never commit local environment files (.env.example stays tracked)
+.env
+.env.*
+!.env.example
+
+# Obsidian: per-device window layout; the rest of .obsidian/ is shared vault config
+.obsidian/workspace*.json

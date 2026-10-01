@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase D, step D5 — Paper template added (complete, 2026-10-01)
+Phase D, step D6 — `.gitignore` rules added (complete, 2026-10-01). Phase D is complete.
 
 ## Completed
 
@@ -81,6 +81,16 @@ Phase D, step D5 — Paper template added (complete, 2026-10-01)
   - new `templates/PAPER.md`: a News note (`type: news`, same frontmatter as `templates/NEWS.md`) with sections for the paper fields that `AGENTS.md` requires: title, authors, institution, date, task/model, claimed contribution, benchmarks, limitations
   - `AGENTS.md`: one line in "Research News Rules" saying a retained paper uses this template and lives in `10-news/ai-research/`
   - `templates/RESEARCH.md` left unchanged
+- [x] Phase D6 (2026-10-01): `.gitignore`
+  - added `.env`, `.env.*`, `!.env.example` and `.obsidian/workspace*.json`: the same rules `SETUP_COMMANDS.md` documents
+  - nothing else in `.gitignore` changed
+
+## Phase D6 Findings
+
+- **Done before its trigger.** The roadmap trigger was "once the vault is opened in Obsidian"; there is still no `.obsidian/` folder. The `.env` rules were worth adding now anyway: the repository is public and `.env` was not ignored.
+- No `.env` file exists and none was ever committed; `.env.example` is empty and stays tracked.
+- Only the per-device layout files (`workspace*.json`) are ignored. The rest of `.obsidian/` (settings, plugins) would be committed when the vault is first opened. Whether plugin data should be shared is a decision for then.
+- `.vscode/` was already ignored as a whole.
 
 ## Phase D5 Findings
 
@@ -184,7 +194,7 @@ Phases and sub-tasks agreed 2026-10-01:
 - Phase A — Loop 04 (done)
 - Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
-- Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); D4 SET50 source (done); D5 paper template (done); still open: `.gitignore`)
+- Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); D4 SET50 source (done); D5 paper template (done); D6 `.gitignore` (done))
 - Phase E — minimal automation, only after about two weeks of manual use
 
 ## Loop 02 Findings
@@ -229,7 +239,7 @@ Summary usefulness:
 - ~~Docker, CI/CD, infrastructure engineering not covered by any registry topic~~ — resolved in Phase D2 (keywords of `developer-tooling`)
 - ~~`templates/RESEARCH.md` lacks paper fields~~ — resolved in Phase D5 with a separate `templates/PAPER.md`
 - No MONTHLY template; weekly/monthly summary filenames undefined
-- `.gitignore` missing `.env`, `.env.*`, `.obsidian/workspace*.json`
+- ~~`.gitignore` missing `.env`, `.env.*`, `.obsidian/workspace*.json`~~ — resolved in Phase D6
 - `50-sources/` purpose undefined
 - HOME.md links resolve only once the Topic/Theme notes exist
 
