@@ -9,6 +9,7 @@ Exit code 0 when every check passes, 1 otherwise.
 Standard library only. It reads files and never changes them.
 """
 
+import datetime
 import pathlib
 import re
 import sys
@@ -139,6 +140,35 @@ def check_links(root, files, news, topic_theme, themes):
                 fail(rel, f"unresolved link [[{target}]]")
 
 
+def check_summaries(root, summaries):
+    """Summary filenames follow the Naming rules in AGENTS.md and match their frontmatter."""
+    # folder -> (frontmatter key, description of the expected filename)
+    rules = {"daily": ("date", "YYYY-MM-DD"), "weekly": ("week", "YYYY-Www"), "monthly": ("month", "YYYY-MM")}
+    for path in summaries:
+        rel = path.relative_to(root)
+        kind = path.parent.name
+        if kind not in rules:
+            fail(rel, "summary is not in daily/, weekly/ or monthly/")
+            continue
+        key, shape = rules[kind]
+        name = path.stem
+        try:
+            if kind == "daily":
+                valid = datetime.date.fromisoformat(name).isoformat() == name
+            elif kind == "weekly":
+                match = re.match(r"^(\d{4})-W(\d{2})$", name)
+                valid = bool(match) and bool(datetime.date.fromisocalendar(int(match.group(1)), int(match.group(2)), 1))
+            else:
+                match = re.match(r"^(\d{4})-(\d{2})$", name)
+                valid = bool(match) and 1 <= int(match.group(2)) <= 12
+        except ValueError:
+            valid = False
+        if not valid:
+            fail(rel, f"filename must be a valid {shape}")
+        if field(frontmatter(path), key) != name:
+            fail(rel, f"frontmatter '{key}' must equal the filename '{name}'")
+
+
 def check_home(root, topic_notes):
     """Every Topic note must be reachable from HOME.md."""
     home = root / "HOME.md"
@@ -160,6 +190,7 @@ def main():
     check_news(root, news, themes, topic_theme)
     check_topics(root, topic_notes, news, topic_theme)
     check_links(root, news + topic_notes + summaries + [root / "HOME.md"], news, topic_theme, themes)
+    check_summaries(root, summaries)
     check_home(root, topic_notes)
 
     for line in failures:

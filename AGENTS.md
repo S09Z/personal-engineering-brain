@@ -244,6 +244,22 @@ Daily briefs:
 
 `40-summaries/daily/YYYY-MM-DD.md`, where the date is the day the brief is written
 
+Weekly summaries:
+
+`40-summaries/weekly/YYYY-Www.md`, for example `2026-W40.md`
+
+- named for the week it **covers**, not the day it is written
+- weeks are ISO 8601 weeks: Monday to Sunday, numbered `W01` to `W53`
+- `YYYY` is the ISO week-year, which can differ from the calendar year in the first days of January (2027-01-01 is in `2026-W53`)
+- frontmatter `week:` holds the same value as the filename
+
+Monthly summaries:
+
+`40-summaries/monthly/YYYY-MM.md`, for example `2026-10.md`
+
+- named for the calendar month it covers
+- frontmatter `month:` holds the same value as the filename
+
 Topics and Themes:
 
 `<id>.md`, where `<id>` is the `id` from `NEWS_REGISTRY.md`
@@ -371,6 +387,7 @@ It needs only Python 3 and changes no files. It checks:
 
 - News notes: required frontmatter fields, allowed `importance` and `status` values, registry ids for `theme` and `topics`, the Primary Topic Rule, folder, filename date and at least one source URL
 - Topic notes: registry id as filename, owning theme, `updated` date, links to every retained News note for the topic and to no unretained one
+- Summaries: daily, weekly and monthly filenames follow the Naming rules and match their frontmatter
 - every `[[link]]` in notes, summaries and `HOME.md` resolves, and every Topic note is linked from `HOME.md`
 
 It does not judge content: whether a summary is accurate, a label is right or a story is stale.

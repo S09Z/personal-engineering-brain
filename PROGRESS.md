@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase E, step E2 — release listing script (complete, 2026-10-01). Phase E is complete.
+Phase C, step C1 — weekly and monthly filenames defined (complete, 2026-10-01)
 
 ## Completed
 
@@ -91,6 +91,18 @@ Phase E, step E2 — release listing script (complete, 2026-10-01). Phase E is c
   - decision: **yes, but only for release listing**, not a general feed fetcher
   - new `scripts/list_releases.py`: prints stable releases since a date for the GitHub repositories in the "My Stack Release Checklist" of `SOURCES.md`; standard library only; writes nothing
   - `SOURCES.md`: the one-line `gh` command is replaced by this script
+- [x] Phase C1 (2026-10-01): summary filenames
+  - `AGENTS.md` Naming: weekly = `40-summaries/weekly/YYYY-Www.md` (ISO 8601 week, Monday to Sunday, named for the week covered); monthly = `40-summaries/monthly/YYYY-MM.md`; frontmatter `week:` / `month:` equals the filename
+  - `scripts/check_notes.py`: checks daily, weekly and monthly filenames and that they match their frontmatter
+
+## Phase C1 Findings
+
+- Only the naming rule is done. C2 (the first weekly summary) still needs 5 daily briefs; 2 exist.
+- The current week is `2026-W40` (Monday 2026-09-28 to Sunday 2026-10-04). Both existing daily briefs fall in it.
+- ISO weeks have an edge at new year: 2027-01-01 belongs to `2026-W53`, so the year in a weekly filename is the ISO week-year. The rule says so, and the check rejects week numbers a year does not have (for example `2027-W53`).
+- The existing daily briefs already pass the new check.
+- There is still no MONTHLY template; `month:` is defined here so the template can follow it (C3).
+- A weekly summary is named for the week it covers, a daily brief for the day it is written. The difference is deliberate: a weekly is normally written after its week ends.
 
 ## Phase E2 Findings
 
@@ -218,7 +230,7 @@ Phases and sub-tasks agreed 2026-10-01:
 
 - Phase A — Loop 04 (done)
 - Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
-- Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
+- Phase C — C1 weekly/monthly filenames (done); C2 first weekly summary (needs 5 daily briefs; 2 exist); C3 MONTHLY template when the first month closes
 - Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); D4 SET50 source (done); D5 paper template (done); D6 `.gitignore` (done))
 - Phase E — minimal automation: E1 validation script (done, ahead of its trigger); E2 release listing script (done, ahead of its trigger)
 
@@ -263,7 +275,7 @@ Summary usefulness:
 - ~~Topic keyword overlaps in `NEWS_REGISTRY.md`~~ — resolved in Phase D1 by the Primary Topic Rule
 - ~~Docker, CI/CD, infrastructure engineering not covered by any registry topic~~ — resolved in Phase D2 (keywords of `developer-tooling`)
 - ~~`templates/RESEARCH.md` lacks paper fields~~ — resolved in Phase D5 with a separate `templates/PAPER.md`
-- No MONTHLY template; weekly/monthly summary filenames undefined
+- No MONTHLY template (weekly/monthly filenames were defined in Phase C1)
 - ~~`.gitignore` missing `.env`, `.env.*`, `.obsidian/workspace*.json`~~ — resolved in Phase D6
 - `50-sources/` purpose undefined
 - HOME.md links resolve only once the Topic/Theme notes exist
