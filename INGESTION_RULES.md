@@ -33,6 +33,8 @@ Supported V1 inputs:
 
 Do not scrape aggressively when a stable feed or official source exists.
 
+At every daily ingestion, also check the pages in "My Stack Release Checklist" in `SOURCES.md`. Web search alone misses releases of the tools in "My Stack".
+
 ---
 
 # 2. Filter
