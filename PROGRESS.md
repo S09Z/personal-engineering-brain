@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase B, step B2 — First Topic notes (complete, 2026-10-01)
+Phase B, step B3 — HOME links checked (complete, 2026-10-01). Phase B is complete.
 
 ## Completed
 
@@ -49,6 +49,24 @@ Phase B, step B2 — First Topic notes (complete, 2026-10-01)
   - `20-topics/web-engineering.md` (two Next.js notes)
   - `20-topics/ai-infrastructure.md` (vLLM v0.30.0)
   - built from the retained News notes only; depends on the B1 statuses, so its PR is stacked on the B1 PR
+- [x] Phase B3 (2026-10-01): `HOME.md` checked against the notes that exist
+  - `web-engineering` and `ai-infrastructure` added to "Important Topics"; both open
+  - one line added explaining that links without a note show as unresolved
+
+## Phase B3 Findings
+
+`HOME.md` link state after this step (19 links):
+
+- 5 open: `web-engineering`, `ai-infrastructure`, `NEWS_REGISTRY`, `SOURCES`, `INGESTION_RULES`
+- 14 are valid registry ids with no note yet: all 8 themes, and the topics `nasdaq`, `sp500`, `set50`, `ai-coding-agents`, `databases`, `local-llm`
+- 0 point to something that is neither a file nor a registry id
+
+Observations:
+
+- No Theme note exists, so the whole "Core Themes" section is unresolved. Theme notes have no rule yet for when they are created.
+- Clicking an unresolved link in Obsidian creates an empty note in the vault's default location, not in `20-topics/` or `30-themes/`. Worth setting when the vault is first opened.
+- `ai-coding-agents` has two retained `important` notes (Sonnet 5.5, DevDay) but no Topic note, because B2 only covered topics with an `action` note.
+- "Today" and "This Week" are plain folder paths; the daily briefs are not linked from `HOME.md`.
 
 ## Phase B2 Findings
 
@@ -91,7 +109,7 @@ Review findings:
 Phases and sub-tasks agreed 2026-10-01:
 
 - Phase A — Loop 04 (done)
-- Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links
+- Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
 - Phase D — registry and template cleanup (topic overlaps, Docker/CI-CD, "stale" window, SET50 source, RESEARCH template, `.gitignore`)
 - Phase E — minimal automation, only after about two weeks of manual use
@@ -144,10 +162,10 @@ Summary usefulness:
 
 ## Next Recommended Loop
 
-Phase B, step B3 — check `HOME.md` against the notes that now exist:
+Phase C needs 5 daily briefs; 2 exist. So the next step is a third daily ingestion (2026-10-02), same procedure as Loop 04:
 
-- which HOME links open, and which still point to notes that do not exist
-- whether `web-engineering` and `ai-infrastructure` should be listed under "Important Topics"
+- follow up open items by updating existing notes (deferred Next.js fixes, PostgreSQL 19 RC, DuckDB 2.0)
+- update the two Topic notes if a retained note changes their "Current State"
 
 ## Guardrail
 

@@ -21,6 +21,10 @@
 
 ## Important Topics
 
+Topics and themes get a note only once they have retained news. A link without a note shows as unresolved in Obsidian.
+
+- [[web-engineering|Web Engineering]] — incl. Next.js, Node.js, TypeScript
+- [[ai-infrastructure|AI Infrastructure]] — incl. vLLM
 - [[nasdaq|NASDAQ]]
 - [[sp500|S&P 500]]
 - [[set50|SET50]]
