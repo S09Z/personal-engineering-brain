@@ -296,8 +296,8 @@ Field meanings:
 
 - `date` — publication date of the strongest source
 - `event_date` — date the event itself happened or is scheduled to happen
-- `theme` — one registry theme `id`: the primary theme, which also decides the `10-news/` folder
-- `topics` — registry topic `id`s; these may belong to other themes
+- `theme` — one registry theme `id`: the theme that owns the primary topic; it also decides the `10-news/` folder
+- `topics` — registry topic `id`s. The first is the primary topic (see "Primary Topic Rule" in `NEWS_REGISTRY.md`); the rest may belong to other themes
 - `sources` — source URLs, strongest first
 
 Allowed importance values (lowercase forms of the labels in `NEWS_REGISTRY.md`):
