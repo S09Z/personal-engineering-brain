@@ -34,3 +34,7 @@ date:
 ## Retained News
 
 - [[]]
+
+## Sources (summary-only items)
+
+-

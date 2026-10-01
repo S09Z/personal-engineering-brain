@@ -837,11 +837,30 @@ Marketing, duplicate, low-signal, or irrelevant.
 
 ---
 
+# My Stack
+
+Tools the owner actually runs or depends on:
+
+- Next.js / Node.js / TypeScript
+- Claude Code and other coding agents
+- PostgreSQL
+- self-hosted inference (vLLM and similar)
+
+A story is ACTION only when it requires doing something on this stack:
+
+- a security fix to apply
+- a breaking change to handle before upgrading
+- a setting or config that must change
+
+The same kind of story about a tool outside this list is IMPORTANT at most.
+
+---
+
 # Promotion Rules
 
 ACTION:
 - Create News note
-- Update Topic note
+- Update Topic note after human review of the News note
 
 IMPORTANT:
 - Create News note
