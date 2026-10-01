@@ -213,6 +213,9 @@ keywords:
 - SDK
 - compiler
 - debugger
+- Docker
+- CI/CD
+- infrastructure engineering
 
 track:
 
@@ -220,6 +223,7 @@ track:
 - productivity changes
 - breaking changes
 - new engineering workflows
+- build, container and pipeline changes
 
 ## Topic: AI Coding Agents
 

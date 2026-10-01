@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase D, step D1 — Primary Topic Rule (complete, 2026-10-01)
+Phase D, step D2 — Docker / CI/CD coverage decided (complete, 2026-10-01)
 
 ## Completed
 
@@ -66,6 +66,10 @@ Phase D, step D1 — Primary Topic Rule (complete, 2026-10-01)
   - `AGENTS.md`: `theme` and `topics` field meanings updated to match
   - DuckLabs note: topics reordered to `[databases, data-platforms]` (ownership of the engine → `databases`); same theme and folder
   - no keyword was removed from any topic
+- [x] Phase D2 (2026-10-01): Docker / CI/CD coverage
+  - decision: **no new Topic**; `Docker`, `CI/CD` and `infrastructure engineering` added as keywords of `developer-tooling`, plus one `track` line
+  - reason: `INGESTION_RULES.md` §9 allows a new Topic only for a subject that appears repeatedly; no Docker or CI/CD story has been ingested yet
+  - revisit: propose an `infrastructure-engineering` Topic once 3 retained News notes are filed under `developer-tooling` because of these keywords
 
 ## Phase D1 Findings
 
@@ -140,7 +144,7 @@ Phases and sub-tasks agreed 2026-10-01:
 - Phase A — Loop 04 (done)
 - Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
-- Phase D — registry and template cleanup: D1 topic overlaps (done); still open: Docker/CI-CD, "stale" window, SET50 source, RESEARCH template, `.gitignore`)
+- Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); still open: "stale" window, SET50 source, RESEARCH template, `.gitignore`)
 - Phase E — minimal automation, only after about two weeks of manual use
 
 ## Loop 02 Findings
@@ -182,7 +186,7 @@ Summary usefulness:
 ## Known Issues (deferred)
 
 - ~~Topic keyword overlaps in `NEWS_REGISTRY.md`~~ — resolved in Phase D1 by the Primary Topic Rule
-- Docker, CI/CD, infrastructure engineering not covered by any registry topic
+- ~~Docker, CI/CD, infrastructure engineering not covered by any registry topic~~ — resolved in Phase D2 (keywords of `developer-tooling`)
 - `templates/RESEARCH.md` lacks paper fields (title, authors, institution, benchmark, limitations)
 - No MONTHLY template; weekly/monthly summary filenames undefined
 - `.gitignore` missing `.env`, `.env.*`, `.obsidian/workspace*.json`
