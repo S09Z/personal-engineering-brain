@@ -236,7 +236,11 @@ one canonical news note + multiple sources
 
 News:
 
-`YYYY-MM-DD-short-description.md`
+`YYYY-MM-DD-short-description.md`, where the date is the note's `event_date`
+
+Daily briefs:
+
+`40-summaries/daily/YYYY-MM-DD.md`, where the date is the day the brief is written
 
 Topics and Themes:
 
@@ -287,6 +291,14 @@ status:
 sources: []
 ---
 ```
+
+Field meanings:
+
+- `date` — publication date of the strongest source
+- `event_date` — date the event itself happened or is scheduled to happen
+- `theme` — one registry theme `id`: the primary theme, which also decides the `10-news/` folder
+- `topics` — registry topic `id`s; these may belong to other themes
+- `sources` — source URLs, strongest first
 
 Allowed importance values (lowercase forms of the labels in `NEWS_REGISTRY.md`):
 

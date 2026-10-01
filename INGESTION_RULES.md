@@ -123,7 +123,7 @@ Allowed values:
 
 ## ACTION
 
-Immediate practical impact.
+Immediate practical impact on the tools listed under "My Stack" in `NEWS_REGISTRY.md`.
 
 Examples:
 
@@ -150,7 +150,7 @@ Do not retain.
 
 ACTION:
 - permanent News note
-- update Topic note
+- update Topic note after human review of the News note
 
 IMPORTANT:
 - permanent News note
