@@ -776,6 +776,33 @@ cadence: daily
 
 ---
 
+# Primary Topic Rule
+
+A story may list several topics, but exactly one is primary:
+
+- the **first** entry in a note's `topics` is the primary topic
+- the note's `theme` is the theme that owns the primary topic, so the primary topic decides the `10-news/` folder
+- other topics may follow in any order and may belong to other themes
+
+Choose the primary topic by what the story is mainly about, not by which keyword it mentions.
+
+Some keywords are listed under more than one topic on purpose. For those, use this table:
+
+| Keyword | Primary topic when the story is about… | Otherwise |
+|---|---|---|
+| vLLM, Triton, inference | the serving software itself: a release, a feature, performance → `ai-infrastructure` | running models in production: autoscaling, GPU scheduling, deployment architecture → `model-deployment` |
+| DuckDB | the database engine or the company behind it: a release, query features, ownership → `databases` | pipelines, lakehouse or table formats built around it → `data-platforms` |
+| MCP | the protocol or building agents with it: spec changes, servers, tool use → `agent-engineering` | MCP support inside a coding tool (Claude Code, Codex, Cursor) → `ai-coding-agents` |
+| coding agent | an agentic coding product or its model → `ai-coding-agents` | other developer tools that only mention agents → `developer-tooling` |
+| vector database | a database product or its vector features → `databases` | retrieval design: chunking, reranking, hybrid search → `rag` |
+| reinforcement learning | how models are trained or post-trained → `model-training` | reasoning methods at inference time → `reasoning-research` |
+
+A research paper takes the research topic it is about as primary (`reasoning-research`, `model-training`, `model-architecture`, `multimodal-ai`). Use `ai-papers` as primary only when none of those fits.
+
+If a new keyword turns out to sit under two topics, add a row here rather than deciding case by case.
+
+---
+
 # Daily Brief Registry
 
 Daily brief priority:

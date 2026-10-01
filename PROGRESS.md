@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-My Stack release checklist written down (complete, 2026-10-01)
+Phase D, step D1 — Primary Topic Rule (complete, 2026-10-01)
 
 ## Completed
 
@@ -61,6 +61,18 @@ My Stack release checklist written down (complete, 2026-10-01)
   - `SOURCES.md`: new "My Stack Release Checklist" section — release and security pages for Next.js, Node.js, TypeScript, Claude Code, Codex, PostgreSQL, PgBouncer and vLLM, what to look for, and one optional `gh` command
   - `INGESTION_RULES.md`: the Discover step now says to check that list at every daily ingestion
   - a documented manual checklist, not automation; nothing added to `scripts/`
+- [x] Phase D1 (2026-10-01): topic overlaps resolved with a Primary Topic Rule
+  - `NEWS_REGISTRY.md`: new "Primary Topic Rule" section — the first entry in `topics` is primary and its theme is the note's `theme`; a table decides the primary topic for all 8 keywords listed under two topics; a rule for research papers vs `ai-papers`
+  - `AGENTS.md`: `theme` and `topics` field meanings updated to match
+  - DuckLabs note: topics reordered to `[databases, data-platforms]` (ownership of the engine → `databases`); same theme and folder
+  - no keyword was removed from any topic
+
+## Phase D1 Findings
+
+- The registry had 8 shared keywords, not 3: vLLM, Triton, inference, DuckDB, MCP, coding agent, vector database, reinforcement learning.
+- 8 of the 9 existing notes already followed the rule; only the order of topics in the DuckLabs note changed.
+- The check can verify that `theme` owns the first topic. It cannot verify that the first topic is the right one; that stays a judgment made with the table.
+- Sonnet 5.5, DevDay and Gemini 4 Argon list `ai-coding-agents` (a software-engineering topic) second, under theme `llm`. That is allowed: only the primary topic must belong to the theme.
 
 ## Third Pass Findings
 
@@ -128,7 +140,7 @@ Phases and sub-tasks agreed 2026-10-01:
 - Phase A — Loop 04 (done)
 - Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
-- Phase D — registry and template cleanup (topic overlaps, Docker/CI-CD, "stale" window, SET50 source, RESEARCH template, `.gitignore`)
+- Phase D — registry and template cleanup: D1 topic overlaps (done); still open: Docker/CI-CD, "stale" window, SET50 source, RESEARCH template, `.gitignore`)
 - Phase E — minimal automation, only after about two weeks of manual use
 
 ## Loop 02 Findings
@@ -169,7 +181,7 @@ Summary usefulness:
 
 ## Known Issues (deferred)
 
-- Topic keyword overlaps in `NEWS_REGISTRY.md`: MCP (ai-coding-agents / agent-engineering), DuckDB (data-platforms / databases), vLLM/Triton (ai-infrastructure / model-deployment)
+- ~~Topic keyword overlaps in `NEWS_REGISTRY.md`~~ — resolved in Phase D1 by the Primary Topic Rule
 - Docker, CI/CD, infrastructure engineering not covered by any registry topic
 - `templates/RESEARCH.md` lacks paper fields (title, authors, institution, benchmark, limitations)
 - No MONTHLY template; weekly/monthly summary filenames undefined

@@ -4,7 +4,7 @@ status: retained
 date: 2026-08-26
 event_date: 2026-08-26
 theme: data-engineering
-topics: [data-platforms, databases]
+topics: [databases, data-platforms]
 importance: important
 sources:
   - https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws
@@ -45,8 +45,8 @@ sources:
 
 ## Related Topics
 
-- [[data-platforms|Data Platforms]]
 - [[databases|Databases]]
+- [[data-platforms|Data Platforms]]
 
 ## Sources
 
