@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase D, step D4 — SET50 source found (complete, 2026-10-01)
+Phase D, step D5 — Paper template added (complete, 2026-10-01)
 
 ## Completed
 
@@ -77,6 +77,17 @@ Phase D, step D4 — SET50 source found (complete, 2026-10-01)
   - decision: **keep SET50** in the Daily Market Snapshot; the exchange publishes it
   - `SOURCES.md`: new "Daily Market Snapshot Sources" section with the two set.or.th pages and how to read them
   - the two daily briefs gained a dated SET50 line each (2026-09-29: 1,065.46, −0.86%; 2026-09-30: 1,038.66, −2.52%); the original "not found" lines are left in place
+- [x] Phase D5 (2026-10-01): template for research papers
+  - new `templates/PAPER.md`: a News note (`type: news`, same frontmatter as `templates/NEWS.md`) with sections for the paper fields that `AGENTS.md` requires: title, authors, institution, date, task/model, claimed contribution, benchmarks, limitations
+  - `AGENTS.md`: one line in "Research News Rules" saying a retained paper uses this template and lives in `10-news/ai-research/`
+  - `templates/RESEARCH.md` left unchanged
+
+## Phase D5 Findings
+
+- **Deviation from the roadmap.** The roadmap said "add paper fields to `templates/RESEARCH.md`". That template is a question-and-answer note for the owner's own research questions, not a note about a paper. A paper is news evidence, so it got its own News-note template instead.
+- **Done before its trigger.** The roadmap trigger was "when the first paper is retained". No paper has been retained; the one paper seen so far (arXiv 2609.26637) is summary-only in the 2026-09-30 brief. The template is therefore untested on a real retained note.
+- A trial note filled from the template passed the note check in a copy outside the repo. Nothing was added to `10-news/ai-research/`.
+- `templates/RESEARCH.md` has no defined folder or use yet.
 
 ## Phase D4 Findings
 
@@ -173,7 +184,7 @@ Phases and sub-tasks agreed 2026-10-01:
 - Phase A — Loop 04 (done)
 - Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
-- Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); D4 SET50 source (done); still open: RESEARCH template, `.gitignore`)
+- Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); D4 SET50 source (done); D5 paper template (done); still open: `.gitignore`)
 - Phase E — minimal automation, only after about two weeks of manual use
 
 ## Loop 02 Findings
@@ -216,7 +227,7 @@ Summary usefulness:
 
 - ~~Topic keyword overlaps in `NEWS_REGISTRY.md`~~ — resolved in Phase D1 by the Primary Topic Rule
 - ~~Docker, CI/CD, infrastructure engineering not covered by any registry topic~~ — resolved in Phase D2 (keywords of `developer-tooling`)
-- `templates/RESEARCH.md` lacks paper fields (title, authors, institution, benchmark, limitations)
+- ~~`templates/RESEARCH.md` lacks paper fields~~ — resolved in Phase D5 with a separate `templates/PAPER.md`
 - No MONTHLY template; weekly/monthly summary filenames undefined
 - `.gitignore` missing `.env`, `.env.*`, `.obsidian/workspace*.json`
 - `50-sources/` purpose undefined

@@ -213,6 +213,8 @@ Record when available:
 
 Do not present paper claims as independently verified facts.
 
+A retained paper is a News note written from `templates/PAPER.md` and stored in `10-news/ai-research/`. `templates/RESEARCH.md` is for your own research questions, not for papers.
+
 ---
 
 # Duplicate Handling
