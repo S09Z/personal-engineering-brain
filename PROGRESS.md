@@ -2,7 +2,7 @@
 
 ## Current State
 
-Status: INGESTION RULES CODIFIED — 6 News notes still `status: inbox`
+Status: TWO DAILY INGESTIONS DONE — 7 News notes, all still `status: inbox`
 
 ## Current Phase
 
@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Loop 03 — Codify the rules Loop 02 exposed (complete, 2026-10-01)
+Loop 04 — Second daily ingestion, 2026-10-01 (complete, 2026-10-01)
 
 ## Completed
 
@@ -36,6 +36,29 @@ Loop 03 — Codify the rules Loop 02 exposed (complete, 2026-10-01)
   - ACTION updates the Topic note only after human review (`NEWS_REGISTRY.md`, `INGESTION_RULES.md`)
   - templates: "Unverified / Conflicting" and "Watch Next" added to NEWS; "Sources (summary-only items)" added to DAILY
   - vLLM v0.30.0 note relabelled `important` → `action` under the new stack rule (now 3 `action`, 3 `important`)
+- [x] Loop 04 (2026-10-01):
+  - Next.js release follow-up handled by updating the existing note (scope 9 → 7 fixes, versions, advisory IDs, dated "Updates" section); no duplicate note
+  - Claude Code 2.1.284 folded into the existing Sonnet 5.5 note
+  - 1 new News note: Micron fiscal Q4 2026 results (`important`, from the SEC filing)
+  - daily brief `40-summaries/daily/2026-10-01.md` written from the updated template
+
+## Loop 04 Findings
+
+- Dedup against existing notes worked: a follow-up to a known event became an update, with an "Updates" section to keep the history. That section is not in the NEWS template yet.
+- The earlier daily brief (2026-09-30) still says "nine vulnerabilities". Daily briefs were left as a record of what was known that day; this is not written down as a rule.
+- The new `action` rule gave a clear answer: Micron earnings → `important` (nothing to do on the stack).
+- Source conflict recorded in the note, not resolved: the GHSA-f87g-xv8r-7p7x advisory range and the 15.5.27 release notes disagree; advisory metadata gives patched versions as `16.3.?` / `15.5.?`.
+- SET50 was missing for the second day. The SET Index fell 2.21%, kept in the daily brief as a routine move.
+
+## Roadmap
+
+Phases and sub-tasks agreed 2026-10-01:
+
+- Phase A — Loop 04 (done)
+- Phase B — owner reviews the 7 inbox notes; first Topic notes for retained `action` items; check HOME links
+- Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
+- Phase D — registry and template cleanup (topic overlaps, Docker/CI-CD, "stale" window, SET50 source, RESEARCH template, `.gitignore`)
+- Phase E — minimal automation, only after about two weeks of manual use
 
 ## Loop 02 Findings
 
@@ -85,13 +108,12 @@ Summary usefulness:
 
 ## Next Recommended Loop
 
-Loop 04 — Second daily ingestion (2026-10-01), to test what Loop 02 could not:
+Phase B, step B1 — owner review of the 7 inbox notes:
 
-- dedup against existing notes: follow up the Next.js 16.3.8 / 15.5.27 release by updating the existing note, not creating a new one
-- the new ACTION / "My Stack" rule on fresh stories
-- the updated templates
+- set `status` on each note (`reviewed` / `retained` / `archived`)
+- confirm or change the importance labels (including whether Sonnet 5.5 is `action`)
 
-Still open from Loop 02: "stale" has no time window; SET50 source; the 6 notes are still `inbox` (owner has not set `reviewed` / `retained`).
+Topic notes (B2) follow only after that review.
 
 ## Guardrail
 

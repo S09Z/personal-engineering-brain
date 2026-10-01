@@ -9,6 +9,7 @@ importance: important
 sources:
   - https://www.anthropic.com/claude-sonnet-5-5
   - https://platform.claude.com/docs/en/models/sonnet-5-5/overview
+  - https://github.com/anthropics/claude-code/releases/tag/v2.1.284
 ---
 
 # Anthropic releases Claude Sonnet 5.5
@@ -43,6 +44,7 @@ Safety: Anthropic says this is the first Sonnet launched with classifiers that p
 ## Practical Impact
 
 - **Claude Code:** per Anthropic, users running Sonnet with thinking disabled must switch to the `between_tools` setting before upgrading. This is a candidate for `action` if that applies to your setup.
+- **Claude Code 2.1.284** (2026-09-28) makes Sonnet 5.5 the default Sonnet model on the Anthropic API, with a 1M context window. Added 2026-10-01.
 
 ## Watch Next
 
@@ -58,3 +60,4 @@ Safety: Anthropic says this is the first Sonnet launched with classifiers that p
 
 - Anthropic, "Introducing Claude Sonnet 5.5", 2026-09-28 — official
 - Claude Platform docs, Sonnet 5.5 model overview — official (found in search, not fetched)
+- anthropics/claude-code release v2.1.284, 2026-09-28 — official
