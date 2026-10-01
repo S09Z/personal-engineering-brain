@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase D, step D2 — Docker / CI/CD coverage decided (complete, 2026-10-01)
+Phase D, step D3 — Stale window defined (complete, 2026-10-01)
 
 ## Completed
 
@@ -70,6 +70,23 @@ Phase D, step D2 — Docker / CI/CD coverage decided (complete, 2026-10-01)
   - decision: **no new Topic**; `Docker`, `CI/CD` and `infrastructure engineering` added as keywords of `developer-tooling`, plus one `track` line
   - reason: `INGESTION_RULES.md` §9 allows a new Topic only for a subject that appears repeatedly; no Docker or CI/CD story has been ingested yet
   - revisit: propose an `infrastructure-engineering` Topic once 3 retained News notes are filed under `developer-tooling` because of these keywords
+- [x] Phase D3 (2026-10-01): "stale" given a time window
+  - `INGESTION_RULES.md` §2: an item is stale when its `event_date` is more than 14 days before ingestion; three exceptions (still requires action on "My Stack", new information, lasting change not yet recorded); a stale `interesting` item is dropped
+  - 14 days is a proposal: it covers a missed week with a week of slack
+
+## Phase D3 Findings
+
+Rule applied to everything ingested so far:
+
+- 8 of 9 News notes were 1–9 days old at ingestion: within the window.
+- 1 note is stale: DuckLabs joins AWS, 36 days old. It is kept under exception 3 (an ownership change that is still true and was not recorded). This replaces the unwritten "first-run backfill" reason from Loop 02.
+- All 7 summary-only items in the two daily briefs were 1–9 days old: within the window.
+- No existing note or brief line has to change.
+
+Limits:
+
+- The ingestion date is not stored in a note. Ages above use each note's first git commit date, which is 2026-10-01 for all nine; six were actually written on 2026-09-30, so their true age is one day less. No classification changes.
+- Because the ingestion date is not in the frontmatter, the window is applied by judgment at ingestion time; the check script does not enforce it.
 
 ## Phase D1 Findings
 
@@ -144,7 +161,7 @@ Phases and sub-tasks agreed 2026-10-01:
 - Phase A — Loop 04 (done)
 - Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
-- Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); still open: "stale" window, SET50 source, RESEARCH template, `.gitignore`)
+- Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); still open: SET50 source, RESEARCH template, `.gitignore`)
 - Phase E — minimal automation, only after about two weeks of manual use
 
 ## Loop 02 Findings
@@ -169,7 +186,7 @@ Conventions exposed:
 - Sections added ad hoc, not in the templates (resolved):
   - News notes: "Watch Next" and "Unverified / Conflicting"
   - Daily brief: "Sources (summary-only items)"
-- "Stale" has no time window. A 2026-08-26 story (DuckLabs → AWS) was retained as a first-run backfill.
+- "Stale" had no time window. A 2026-08-26 story (DuckLabs → AWS) was retained as a first-run backfill. (resolved in Phase D3)
 
 Retention / importance:
 - ACTION vs IMPORTANT depends on the user's actual stack (Next.js? vLLM? Claude Code with thinking disabled?), but no "my stack" list existed. (resolved)
