@@ -1,6 +1,6 @@
 ---
 type: news
-status: inbox
+status: retained
 date: 2026-09-28
 event_date: 2026-09-28
 theme: llm
@@ -43,7 +43,7 @@ Safety: Anthropic says this is the first Sonnet launched with classifiers that p
 
 ## Practical Impact
 
-- **Claude Code:** per Anthropic, users running Sonnet with thinking disabled must switch to the `between_tools` setting before upgrading. This is a candidate for `action` if that applies to your setup.
+- **Claude Code:** per Anthropic, users running Sonnet with thinking disabled must switch to the `between_tools` setting before upgrading. Checked 2026-10-01: thinking is not disabled in the owner's Claude Code settings, so this change does not apply. The note stays `important`.
 - **Claude Code 2.1.284** (2026-09-28) makes Sonnet 5.5 the default Sonnet model on the Anthropic API, with a 1M context window. Added 2026-10-01.
 
 ## Watch Next

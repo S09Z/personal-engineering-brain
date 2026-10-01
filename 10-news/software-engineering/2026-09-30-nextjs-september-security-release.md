@@ -1,6 +1,6 @@
 ---
 type: news
-status: inbox
+status: retained
 date: 2026-09-23
 event_date: 2026-09-30
 theme: software-engineering

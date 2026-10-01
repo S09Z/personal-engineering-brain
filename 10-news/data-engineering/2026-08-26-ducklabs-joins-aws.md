@@ -1,6 +1,6 @@
 ---
 type: news
-status: inbox
+status: retained
 date: 2026-08-26
 event_date: 2026-08-26
 theme: data-engineering
