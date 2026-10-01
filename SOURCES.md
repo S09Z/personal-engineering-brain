@@ -153,3 +153,22 @@ for r in vercel/next.js nodejs/node microsoft/TypeScript anthropics/claude-code 
   gh api "repos/$r/releases?per_page=30" --jq '[.[] | select(.prerelease | not)][0:3][] | "\(.published_at[0:10])  \(.tag_name)"'
 done
 ```
+
+---
+
+# Daily Market Snapshot Sources
+
+## SET and SET50
+
+Use the Stock Exchange of Thailand (official). Both pages are on set.or.th.
+
+| Page | What it gives | How to read it |
+|---|---|---|
+| https://www.set.or.th/en/market/statistics/five-days | Closing level and % change for SET, SET50 and other indexes for the last five trading days; trading volume and value | Needs a real browser. A plain fetch returns the page without the numbers. |
+| https://www.set.or.th/en/market/index/set50/overview | SET50 last value, change, % change, high, low, with an "as of" time | A plain fetch works. |
+
+Notes:
+
+- SET states that the day's figures are officially updated at around 18:30 Bangkok time. Before that, the last column is a live value, not a close.
+- On the overview page, the previous close is the last value minus the change.
+- Thai financial news (for example Kaohoon International's daily "Market Roundup") reports the SET Index and the analyst view of drivers, but not SET50. Use it for drivers, and the exchange for levels.
