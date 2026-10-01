@@ -2,7 +2,7 @@
 
 ## Current State
 
-Status: TWO DAILY INGESTIONS DONE — 7 News notes, all still `status: inbox`
+Status: FIRST REVIEW DONE — 7 News notes `status: retained` (agent-proposed; owner confirms by merging the PR)
 
 ## Current Phase
 
@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Loop 04 — Second daily ingestion, 2026-10-01 (complete, 2026-10-01)
+Phase B, step B1 — Review of the 7 inbox notes (complete, 2026-10-01)
 
 ## Completed
 
@@ -41,6 +41,30 @@ Loop 04 — Second daily ingestion, 2026-10-01 (complete, 2026-10-01)
   - Claude Code 2.1.284 folded into the existing Sonnet 5.5 note
   - 1 new News note: Micron fiscal Q4 2026 results (`important`, from the SEC filing)
   - daily brief `40-summaries/daily/2026-10-01.md` written from the updated template
+- [x] Phase B1 (2026-10-01): review of the 7 inbox notes, delegated to the agent by the owner
+  - all 7 notes set to `status: retained`; no importance label changed; nothing archived
+  - OpenAI DevDay note rewritten from the official recap (read in a browser; plain fetch is blocked) and two statements corrected
+  - Sonnet 5.5 stays `important`: the Claude Code setting change does not apply to the owner's setup
+
+## Phase B1 Review
+
+Human-control note: the statuses below were proposed by the agent in a draft PR. Merging that PR is the owner's confirmation.
+
+| Note | Importance | Status | Reason |
+|---|---|---|---|
+| 2026-09-30 Next.js September security release | action | retained | Security fixes on the stack; official sources |
+| 2026-09-22 Next.js `next/og` RCE | action | retained | Critical fix on the stack; official advisory |
+| 2026-09-22 vLLM v0.30.0 | action | retained | Breaking changes on the stack; official release notes |
+| 2026-09-28 Claude Sonnet 5.5 | important | retained | Major model release; nothing to change locally |
+| 2026-09-29 OpenAI DevDay 2026 | important | retained | Now verified against the official recap |
+| 2026-08-26 DuckLabs joins AWS | important | retained | Ownership change of a core tool; official source |
+| 2026-09-30 Micron fiscal Q4 2026 | important | retained | Major semiconductor-cycle earnings event; SEC filing |
+
+Review findings:
+
+- Secondary live coverage was wrong on two DevDay points (Codex "cloud-only"; Ultrafast tied to GPT-6.1 Sol). The official recap corrected both. Notes built only on live blogs should stay `inbox` until the primary source is read.
+- The 2026-09-30 daily brief still carries the uncorrected DevDay wording ("cloud-only Codex"). Briefs were again left as a record of the day.
+- No follow-up Next.js release for the deferred critical and high vulnerabilities as of this review.
 
 ## Loop 04 Findings
 
@@ -55,7 +79,7 @@ Loop 04 — Second daily ingestion, 2026-10-01 (complete, 2026-10-01)
 Phases and sub-tasks agreed 2026-10-01:
 
 - Phase A — Loop 04 (done)
-- Phase B — owner reviews the 7 inbox notes; first Topic notes for retained `action` items; check HOME links
+- Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items; B3 check HOME links
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
 - Phase D — registry and template cleanup (topic overlaps, Docker/CI-CD, "stale" window, SET50 source, RESEARCH template, `.gitignore`)
 - Phase E — minimal automation, only after about two weeks of manual use
@@ -108,12 +132,10 @@ Summary usefulness:
 
 ## Next Recommended Loop
 
-Phase B, step B1 — owner review of the 7 inbox notes:
+Phase B, step B2 — create the first Topic notes, only for topics that have a retained `action` note:
 
-- set `status` on each note (`reviewed` / `retained` / `archived`)
-- confirm or change the importance labels (including whether Sonnet 5.5 is `action`)
-
-Topic notes (B2) follow only after that review.
+- `20-topics/web-engineering.md` (two Next.js notes)
+- `20-topics/ai-infrastructure.md` (vLLM v0.30.0)
 
 ## Guardrail
 
