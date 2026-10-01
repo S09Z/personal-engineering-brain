@@ -2,7 +2,7 @@
 
 ## Current State
 
-Status: FIRST REVIEW DONE — 7 News notes `status: retained` (agent-proposed; owner confirms by merging the PR)
+Status: FIRST TOPIC NOTES WRITTEN — 7 retained News notes, 2 Topic notes (both agent-proposed; owner confirms by merging the PRs)
 
 ## Current Phase
 
@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase B, step B1 — Review of the 7 inbox notes (complete, 2026-10-01)
+Phase B, step B2 — First Topic notes (complete, 2026-10-01)
 
 ## Completed
 
@@ -45,6 +45,18 @@ Phase B, step B1 — Review of the 7 inbox notes (complete, 2026-10-01)
   - all 7 notes set to `status: retained`; no importance label changed; nothing archived
   - OpenAI DevDay note rewritten from the official recap (read in a browser; plain fetch is blocked) and two statements corrected
   - Sonnet 5.5 stays `important`: the Claude Code setting change does not apply to the owner's setup
+- [x] Phase B2 (2026-10-01): first Topic notes, only for topics with a retained `action` note
+  - `20-topics/web-engineering.md` (two Next.js notes)
+  - `20-topics/ai-infrastructure.md` (vLLM v0.30.0)
+  - built from the retained News notes only; depends on the B1 statuses, so its PR is stacked on the B1 PR
+
+## Phase B2 Findings
+
+- `templates/TOPIC.md` worked as is. One line was added under the title in each note: the registry id and what the topic covers.
+- "Current State" is the useful section: it answers "what version should I be on" without reading the News notes.
+- Two statements in the Topic notes come from GitHub data rather than a News note (Next.js advisory history, vLLM release cadence). Both sit under "Open Questions" and name their source.
+- The vLLM note is filed under two topics; only `ai-infrastructure` got a note. `model-deployment` is linked but does not exist yet.
+- Neither new topic is listed in `HOME.md` under "Important Topics".
 
 ## Phase B1 Review
 
@@ -79,7 +91,7 @@ Review findings:
 Phases and sub-tasks agreed 2026-10-01:
 
 - Phase A — Loop 04 (done)
-- Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items; B3 check HOME links
+- Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
 - Phase D — registry and template cleanup (topic overlaps, Docker/CI-CD, "stale" window, SET50 source, RESEARCH template, `.gitignore`)
 - Phase E — minimal automation, only after about two weeks of manual use
@@ -132,10 +144,10 @@ Summary usefulness:
 
 ## Next Recommended Loop
 
-Phase B, step B2 — create the first Topic notes, only for topics that have a retained `action` note:
+Phase B, step B3 — check `HOME.md` against the notes that now exist:
 
-- `20-topics/web-engineering.md` (two Next.js notes)
-- `20-topics/ai-infrastructure.md` (vLLM v0.30.0)
+- which HOME links open, and which still point to notes that do not exist
+- whether `web-engineering` and `ai-infrastructure` should be listed under "Important Topics"
 
 ## Guardrail
 
