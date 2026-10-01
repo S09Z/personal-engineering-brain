@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase D, step D6 — `.gitignore` rules added (complete, 2026-10-01). Phase D is complete.
+Phase E, step E1 — validation script in `scripts/` (complete, 2026-10-01)
 
 ## Completed
 
@@ -84,6 +84,17 @@ Phase D, step D6 — `.gitignore` rules added (complete, 2026-10-01). Phase D is
 - [x] Phase D6 (2026-10-01): `.gitignore`
   - added `.env`, `.env.*`, `!.env.example` and `.obsidian/workspace*.json`: the same rules `SETUP_COMMANDS.md` documents
   - nothing else in `.gitignore` changed
+- [x] Phase E1 (2026-10-01): one validation command
+  - new `scripts/check_notes.py`: the two check scripts that had lived outside the repo (note check, `HOME.md` link check), rewritten as one; standard library only, read-only
+  - `AGENTS.md`: new "Validation" section with the command and what it does and does not check
+
+## Phase E1 Findings
+
+- **Done before its trigger.** The roadmap trigger for Phase E was about two weeks of manual use; the workflow has run for two days. The guardrail below concerns automating ingestion. This script validates notes and automates nothing, but it is still the first code in the repo.
+- On the repo: 9 News notes, 2 Topic notes, 2 summaries and `HOME.md` checked, 0 failures.
+- On a copy with 9 planted errors, all 9 were reported (wrong importance, wrong status, unknown topic, primary topic not owned by theme, filename date, wrong folder, wrong Topic theme, unresolved link, Topic note missing from `HOME.md`).
+- Not checked, by design: the stale window (a note does not store its ingestion date) and anything about content.
+- No tests for the script itself and no CI; it is run by hand.
 
 ## Phase D6 Findings
 
@@ -195,7 +206,7 @@ Phases and sub-tasks agreed 2026-10-01:
 - Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
 - Phase C — after 5 daily briefs: weekly/monthly filenames, first weekly summary
 - Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); D4 SET50 source (done); D5 paper template (done); D6 `.gitignore` (done))
-- Phase E — minimal automation, only after about two weeks of manual use
+- Phase E — minimal automation: E1 validation script (done, ahead of its trigger); E2 feed-list fetch script still waits for about two weeks of manual use
 
 ## Loop 02 Findings
 
