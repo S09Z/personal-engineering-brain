@@ -46,7 +46,23 @@ Reject early when an item is:
 - low-signal commentary
 - unsupported rumor
 - obvious SEO content
-- stale with no new information
+- stale with no new information (see "Stale window" below)
+
+## Stale window
+
+An item is **stale** when its `event_date` is more than **14 days** before the day it is ingested.
+
+Within 14 days: handle it normally, even if it was missed at the time.
+
+Older than 14 days: reject it, unless one of these holds:
+
+1. **Still requires action.** It is a security fix or breaking change on "My Stack" (`NEWS_REGISTRY.md`) that has not been dealt with yet.
+2. **New information.** Something has changed since the event: a follow-up release, a correction, a result. Record the new development with its own `event_date`, or update the existing note.
+3. **Lasting change not yet recorded.** It changed a fact that is still true today and that no note records: ownership, licence, end of life, a version that is still the latest. One note may be created as a backfill.
+
+A stale item kept under an exception gets a News note only if it is `action` or `important`. A stale `interesting` item is dropped; it does not go in the daily brief.
+
+Background that is older than 14 days and only explains a current story belongs inside that story's note, not in a note of its own.
 
 ---
 
