@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase C, step C1 — weekly and monthly filenames defined (complete, 2026-10-01)
+Phase C, step C3 — MONTHLY template added (complete, 2026-10-01). C2 is still open.
 
 ## Completed
 
@@ -94,6 +94,17 @@ Phase C, step C1 — weekly and monthly filenames defined (complete, 2026-10-01)
 - [x] Phase C1 (2026-10-01): summary filenames
   - `AGENTS.md` Naming: weekly = `40-summaries/weekly/YYYY-Www.md` (ISO 8601 week, Monday to Sunday, named for the week covered); monthly = `40-summaries/monthly/YYYY-MM.md`; frontmatter `week:` / `month:` equals the filename
   - `scripts/check_notes.py`: checks daily, weekly and monthly filenames and that they match their frontmatter
+- [x] Phase C3 (2026-10-01): `templates/MONTHLY.md`
+  - `type: monthly-summary`, `month:` (the field defined in C1)
+  - every section of `templates/WEEKLY.md`, plus five that only make sense over a month: a three-index market breakdown, "Actions Taken and Still Open", "Topic Notes Updated", "Watch Next Month" and links to the month's weekly summaries
+  - no monthly summary was written
+
+## Phase C3 Findings
+
+- **Trigger met, barely.** The roadmap trigger was "when the first month closes". September 2026 closed on 2026-09-30, but the vault holds one daily brief from that month and no weekly summary, so there is nothing yet to write a September summary from.
+- **Done out of order.** C2 (the first weekly summary) is still blocked on daily briefs, so the template's "Weekly Summaries" section has never been filled.
+- The template is untested on a real summary. A copy saved as `monthly/2026-09.md` with `month:` filled passed `scripts/check_notes.py`; an unfilled copy was rejected.
+- A first draft left out the weekly template's "Worth Trying" section; comparing the two templates caught it.
 
 ## Phase C1 Findings
 
@@ -230,7 +241,7 @@ Phases and sub-tasks agreed 2026-10-01:
 
 - Phase A — Loop 04 (done)
 - Phase B — B1 review of the 7 inbox notes (done); B2 first Topic notes for retained `action` items (done); B3 check HOME links (done)
-- Phase C — C1 weekly/monthly filenames (done); C2 first weekly summary (needs 5 daily briefs; 2 exist); C3 MONTHLY template when the first month closes
+- Phase C — C1 weekly/monthly filenames (done); C2 first weekly summary (needs 5 daily briefs; 2 exist); C3 MONTHLY template (done)
 - Phase D — registry and template cleanup: D1 topic overlaps (done); D2 Docker/CI-CD (done); D3 stale window (done); D4 SET50 source (done); D5 paper template (done); D6 `.gitignore` (done))
 - Phase E — minimal automation: E1 validation script (done, ahead of its trigger); E2 release listing script (done, ahead of its trigger)
 
@@ -275,7 +286,7 @@ Summary usefulness:
 - ~~Topic keyword overlaps in `NEWS_REGISTRY.md`~~ — resolved in Phase D1 by the Primary Topic Rule
 - ~~Docker, CI/CD, infrastructure engineering not covered by any registry topic~~ — resolved in Phase D2 (keywords of `developer-tooling`)
 - ~~`templates/RESEARCH.md` lacks paper fields~~ — resolved in Phase D5 with a separate `templates/PAPER.md`
-- No MONTHLY template (weekly/monthly filenames were defined in Phase C1)
+- ~~No MONTHLY template~~ — resolved in Phase C3
 - ~~`.gitignore` missing `.env`, `.env.*`, `.obsidian/workspace*.json`~~ — resolved in Phase D6
 - `50-sources/` purpose undefined
 - HOME.md links resolve only once the Topic/Theme notes exist
