@@ -359,6 +359,24 @@ The system must work without a local LLM.
 
 ---
 
+# Validation
+
+Run this before committing any change to notes, the registry or `HOME.md`:
+
+```bash
+python3 scripts/check_notes.py
+```
+
+It needs only Python 3 and changes no files. It checks:
+
+- News notes: required frontmatter fields, allowed `importance` and `status` values, registry ids for `theme` and `topics`, the Primary Topic Rule, folder, filename date and at least one source URL
+- Topic notes: registry id as filename, owning theme, `updated` date, links to every retained News note for the topic and to no unretained one
+- every `[[link]]` in notes, summaries and `HOME.md` resolves, and every Topic note is linked from `HOME.md`
+
+It does not judge content: whether a summary is accurate, a label is right or a story is stale.
+
+---
+
 # Definition of Done
 
 A change is complete only when:
