@@ -2,7 +2,7 @@
 
 ## Current State
 
-Status: FIRST TOPIC NOTES WRITTEN — 7 retained News notes, 2 Topic notes (both agent-proposed; owner confirms by merging the PRs)
+Status: THIRD INGESTION PASS DONE — 9 News notes (7 retained, 2 inbox), 2 Topic notes, 2 daily briefs
 
 ## Current Phase
 
@@ -10,7 +10,7 @@ Phase 01 — Manual News Knowledge Base
 
 ## Current Loop
 
-Phase B, step B3 — HOME links checked (complete, 2026-10-01). Phase B is complete.
+Third ingestion pass, run as a second pass for 2026-10-01 (complete, 2026-10-01)
 
 ## Completed
 
@@ -52,6 +52,19 @@ Phase B, step B3 — HOME links checked (complete, 2026-10-01). Phase B is compl
 - [x] Phase B3 (2026-10-01): `HOME.md` checked against the notes that exist
   - `web-engineering` and `ai-infrastructure` added to "Important Topics"; both open
   - one line added explaining that links without a note show as unresolved
+- [x] Third ingestion pass (2026-10-01, second pass of the day):
+  - 2 new News notes, both `inbox`: Gemini 4 Argon (`important`), PgBouncer 1.26.0 security release (`important`)
+  - 3 routine releases kept summary-only (Node.js 22.23.3, Node.js 26.10.0, DuckDB 1.5.6)
+  - existing notes checked for follow-ups; none needed
+  - added as a "Second Pass" section in `40-summaries/daily/2026-10-01.md`; no new brief file
+
+## Third Pass Findings
+
+- **It was not a 2026-10-02 ingestion.** The pass was requested on 2026-10-01, when a brief for that day already existed and no market session had closed since. A brief dated 10-02 would have been falsely dated, so the pass was appended to the 10-01 brief. The count of daily briefs is still 2; Phase C needs 5.
+- **Web search misses on-stack releases.** PgBouncer's security release (2026-09-23) and the Node.js and DuckDB releases were found only by listing GitHub releases and the postgresql.org news archive directly. A short fixed list of release pages to check for "My Stack" would close this gap; it is not written down yet.
+- **"My Stack" is too coarse for one case.** "PostgreSQL" does not say whether PgBouncer is in use, so the PgBouncer note could not be labelled `action` with confidence.
+- **One brief per day vs. several passes.** The naming rule gives one brief per day. A "Second Pass" section worked, but is not a documented convention.
+- The two Topic notes did not change: no retained note changed their "Current State".
 
 ## Phase B3 Findings
 
@@ -162,10 +175,11 @@ Summary usefulness:
 
 ## Next Recommended Loop
 
-Phase C needs 5 daily briefs; 2 exist. So the next step is a third daily ingestion (2026-10-02), same procedure as Loop 04:
+Daily ingestion for 2026-10-02, run on or after that date:
 
-- follow up open items by updating existing notes (deferred Next.js fixes, PostgreSQL 19 RC, DuckDB 2.0)
-- update the two Topic notes if a retained note changes their "Current State"
+- market snapshot for the 2026-10-01 sessions (US and SET)
+- review the 2 inbox notes (Gemini 4 Argon, PgBouncer)
+- follow-ups: deferred Next.js fixes, PostgreSQL 19 RC, DuckDB 2.0, Node.js 26 LTS
 
 ## Guardrail
 
