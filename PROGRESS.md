@@ -96,7 +96,7 @@ Phase C, step C3 — MONTHLY template added (complete, 2026-10-01). C2 is still 
   - `scripts/check_notes.py`: checks daily, weekly and monthly filenames and that they match their frontmatter
 - [x] Phase C3 (2026-10-01): `templates/MONTHLY.md`
   - `type: monthly-summary`, `month:` (the field defined in C1)
-  - every section of `templates/WEEKLY.md`, plus four that only make sense over a month: a three-index market breakdown, "Actions Taken and Still Open", "Topic Notes Updated", "Watch Next Month" and links to the month's weekly summaries
+  - every section of `templates/WEEKLY.md`, plus five that only make sense over a month: a three-index market breakdown, "Actions Taken and Still Open", "Topic Notes Updated", "Watch Next Month" and links to the month's weekly summaries
   - no monthly summary was written
 
 ## Phase C3 Findings
