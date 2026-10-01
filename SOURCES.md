@@ -143,16 +143,15 @@ The PostgreSQL news archive also carries ecosystem releases such as PgBouncer.
 
 Compare against the versions already recorded in the Topic notes and the last daily brief, so only releases since the last check are considered.
 
-## Optional: list the latest stable releases in one command
-
-Needs the GitHub CLI (`gh`). It prints the three most recent non-prerelease tags per repository. PostgreSQL itself is not on GitHub releases; check its news archive by hand.
+## List recent releases with one command
 
 ```bash
-for r in vercel/next.js nodejs/node microsoft/TypeScript anthropics/claude-code openai/codex vllm-project/vllm pgbouncer/pgbouncer; do
-  echo "== $r"
-  gh api "repos/$r/releases?per_page=30" --jq '[.[] | select(.prerelease | not)][0:3][] | "\(.published_at[0:10])  \(.tag_name)"'
-done
+python3 scripts/list_releases.py
 ```
+
+It reads the GitHub release pages listed in this section and prints stable releases from the last 14 days. Add `--since YYYY-MM-DD` to list releases from the date of the last check instead.
+
+It needs only Python 3 and changes no files. It lists; it does not decide what a release means. At the end it prints the pages in this section that it cannot read (blogs, security pages, the PostgreSQL news archive). Check those by hand.
 
 ---
 
